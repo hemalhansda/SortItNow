@@ -1,19 +1,25 @@
-function sortProductData(arrayOfData, orderStruct, onProp, nestedOnSortList) {
-    if (!orderStruct.length) return;
-    
-    onProp = onProp === 'HK' ? '' : (
-        onProp === 'ROW' ? '' : '_' + onProp);
+const options = require('./config/config');
 
+function sortProductData(arrayOfData, orderStruct) {
+    if (!orderStruct.length) return;
 
     arrayOfData.sort(function(a, b) {
-        a['PRICE' + onProp] = parseInt(a['PRICE' + onProp]);
-        b['PRICE' + onProp] = parseInt(b['PRICE' + onProp]);
+        a['PRICE'] = parseInt(a['PRICE']);
+        b['PRICE'] = parseInt(b['PRICE']);
 
         a['FIRST_RECD_DATE'] = new Date(a['FIRST_RECD_DATE']).getTime();
         b['FIRST_RECD_DATE'] = new Date(b['FIRST_RECD_DATE']).getTime();
 
         a['PRODUCT_BRAND'] = a['PRODUCT_BRAND'] === undefined ? '' : a['PRODUCT_BRAND'];
         b['PRODUCT_BRAND'] = b['PRODUCT_BRAND'] === undefined ? '' : b['PRODUCT_BRAND'];
+
+        const numberOfNests = options.nestedOnSortList;
+        for (let i = 0; i < numberOfNests.length; i++) {
+            if (Number(numberOfNests[i]) !== NaN) {
+                a[numberOfNests[i]] = parseInt(a[numberOfNests[i]]);
+                b[numberOfNests[i]] = parseInt(b[numberOfNests[i]]);
+            }
+        }
 
         let less = -1, more = 0;
 

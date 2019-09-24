@@ -1,8 +1,5 @@
-const option = {
-	arrayOfData, 
-	orderStruct, 
-	onProp,
-	nestedOnSortList,
+const options = {
+	nestedOnSortList: [],
 };
 
 module.exports = options;

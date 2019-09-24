@@ -1,0 +1,19 @@
+{
+  "name": "sortitnow",
+  "version": "1.0.0",
+  "description": "sort array of objects with specific properties",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hemalhansda/SortItNow.git"
+  },
+  "author": "Hemaal Taras Hansda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hemalhansda/SortItNow/issues"
+  },
+  "homepage": "https://github.com/hemalhansda/SortItNow#readme"
+}

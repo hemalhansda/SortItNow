@@ -18,6 +18,9 @@ function sortProductData(arrayOfData, orderStruct) {
             if (Number(numberOfNests[i]) !== NaN) {
                 a[numberOfNests[i]] = parseInt(a[numberOfNests[i]]);
                 b[numberOfNests[i]] = parseInt(b[numberOfNests[i]]);
+            } else {
+                a[numberOfNests[i]] = a[numberOfNests[i]];
+                b[numberOfNests[i]] = b[numberOfNests[i]];
             }
         }
 
